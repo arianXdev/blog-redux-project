@@ -17,10 +17,16 @@ const PostsList = () => {
 	));
 
 	return (
-		<section className="posts">
-			<h2 className="title">Posts</h2>
-			{renderedPosts}
-		</section>
+		<>
+			{posts.length > 0 ? (
+				<section className="posts">
+					<h2 className="title">Posts</h2>
+					{renderedPosts}
+				</section>
+			) : (
+				<p className="empty-warning">There's no posts in here! You may want to consider adding a few ones.</p>
+			)}
+		</>
 	);
 };
 

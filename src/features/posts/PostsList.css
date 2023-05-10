@@ -33,3 +33,16 @@
 	font-size: 0.95em;
 	line-height: 1.5;
 }
+
+.empty-warning {
+	text-align: center;
+	user-select: none;
+	color: darkgray;
+	font-weight: 700;
+	margin-top: 100px;
+	font-size: 1.5em;
+	font-family: var(--mono-font);
+	-webkit-user-select: none;
+	pointer-events: none;
+	-webkit-pointer-events: none;
+}

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import Breadcrumb from "../../components/Breadcrumb";
+import { Breadcrumb } from "../../components";
 
 import "./SinglePostPage.css";
 

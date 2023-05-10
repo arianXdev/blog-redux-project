@@ -1,14 +1,40 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
+import { postAdded } from "./postsSlice";
+
 import "./AddPostForm.css";
 
 const AddPostForm = () => {
 	const [title, setTitle] = useState("");
 	const [content, setContent] = useState("");
 
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+
 	const canSave = Boolean(title) && Boolean(content);
 
 	const onTitleChanged = (e) => setTitle(e.target.value);
 	const onContentChanged = (e) => setContent(e.target.value);
+
+	const onSavePostClicked = () => {
+		if (title && content) {
+			dispatch(
+				postAdded({
+					id: nanoid(),
+					title,
+					content,
+				})
+			);
+
+			navigate("/");
+
+			setTitle("");
+			setContent("");
+		}
+	};
 
 	return (
 		<section className="add">
@@ -30,7 +56,7 @@ const AddPostForm = () => {
 						<textarea id="postContent" className="add__content" name="postContent" value={content} onChange={onContentChanged} />
 					</div>
 
-					<button type="button" className="add__btn" disabled={!canSave}>
+					<button onClick={onSavePostClicked} type="button" className="add__btn" disabled={!canSave}>
 						Save Post
 					</button>
 				</form>

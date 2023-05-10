@@ -17,9 +17,9 @@ const SinglePostPage = () => {
 	}
 
 	return (
-		<section>
+		<section className="container">
 			<article className="post">
-				<h2>{post.title}</h2>
+				<h2 className="post__title">{post.title}</h2>
 				<p className="post__content">{post.content}</p>
 			</article>
 		</section>

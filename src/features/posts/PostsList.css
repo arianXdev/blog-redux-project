@@ -21,7 +21,7 @@
 	transition: all 0.2s ease-in-out;
 }
 
-.post:hover {
+.post-item:hover {
 	box-shadow: 0 0 20px 5px rgba(15, 15, 15, 0.9);
 }
 

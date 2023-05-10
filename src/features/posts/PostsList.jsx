@@ -14,7 +14,9 @@ const PostsList = () => {
 		<article className="post-item" key={post.id}>
 			<h3 className="post-item__title">{post.title}</h3>
 			<p className="post-item__content">{post.content.substring(0, 100)}</p>
-			<Link to={`/posts/${post.id}`}>View Post</Link>
+			<Link to={`/posts/${post.id}`} className="post-item__view-btn">
+				<ion-icon name="expand-outline"></ion-icon>
+			</Link>
 		</article>
 	));
 

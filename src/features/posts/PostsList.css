@@ -12,6 +12,7 @@
 }
 
 .post-item {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	padding: 1em;
@@ -45,4 +46,24 @@
 	-webkit-user-select: none;
 	pointer-events: none;
 	-webkit-pointer-events: none;
+}
+
+.post-item__view-btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.35em;
+	transition: all 0.3s ease-in-out;
+	opacity: 0;
+	user-select: none;
+	pointer-events: none;
+}
+
+.post-item:hover .post-item__view-btn {
+	opacity: 1;
+	user-select: auto;
+	pointer-events: auto;
 }

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import Breadcrumb from "../../components/Breadcrumb";
 
 import "./SinglePostPage.css";
 
@@ -18,6 +19,7 @@ const SinglePostPage = () => {
 
 	return (
 		<section className="container">
+			<Breadcrumb />
 			<article className="post">
 				<h2 className="post__title">{post.title}</h2>
 				<p className="post__content">{post.content}</p>

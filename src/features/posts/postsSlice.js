@@ -10,8 +10,6 @@ const postsSlice = createSlice({
 	initialState,
 	reducers: {
 		postAdded: (state, action) => {
-			console.log(state);
-
 			// action.payload = newPost
 			state.push(action.payload);
 		},

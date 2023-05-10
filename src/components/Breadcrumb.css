@@ -1,0 +1,19 @@
+.breadcrumb {
+	margin-top: 1.3em;
+	font-size: 0.7em;
+	font-family: var(--mono-font);
+	font-weight: normal;
+	letter-spacing: 3px;
+	opacity: 0.5;
+	user-select: none;
+	pointer-events: none;
+}
+
+.breadcrumb__home {
+	user-select: auto;
+	pointer-events: auto;
+}
+
+.breadcrumb__home:hover {
+	color: #999 !important;
+}

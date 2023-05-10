@@ -10,9 +10,9 @@ const PostsList = () => {
 	const posts = useSelector((state) => state.posts);
 
 	const renderedPosts = posts.map((post) => (
-		<article className="post" key={post.id}>
-			<h3 className="post__title">{post.title}</h3>
-			<p className="post__content">{post.content.substring(0, 100)}</p>
+		<article className="post-item" key={post.id}>
+			<h3 className="post-item__title">{post.title}</h3>
+			<p className="post-item__content">{post.content.substring(0, 100)}</p>
 		</article>
 	));
 

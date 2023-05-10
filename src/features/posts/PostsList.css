@@ -11,7 +11,7 @@
 	font-size: 1.7em;
 }
 
-.post {
+.post-item {
 	display: flex;
 	flex-direction: column;
 	padding: 1em;
@@ -25,11 +25,11 @@
 	box-shadow: 0 0 20px 5px rgba(15, 15, 15, 0.9);
 }
 
-.post__title {
+.post-item__title {
 	margin-bottom: 0.5em;
 }
 
-.post__content {
+.post-item__content {
 	font-size: 0.95em;
 	line-height: 1.5;
 }

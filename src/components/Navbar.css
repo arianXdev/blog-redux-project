@@ -1,0 +1,11 @@
+.navbar {
+	width: 100%;
+	text-align: center;
+	font-size: 12px;
+	background: #333;
+}
+
+.navbar__title {
+	margin: 0;
+	padding: 0.5em 0;
+}

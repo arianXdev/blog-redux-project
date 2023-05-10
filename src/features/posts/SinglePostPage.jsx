@@ -1,8 +1,10 @@
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+
 import "./SinglePostPage.css";
 
-const SinglePostPage = ({ match }) => {
-	const { postId } = match.params;
+const SinglePostPage = () => {
+	const { postId } = useParams();
 
 	const post = useSelector((state) => state.posts.find((post) => post.id === postId));
 

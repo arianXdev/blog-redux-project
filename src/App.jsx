@@ -4,6 +4,8 @@ import FAB from "./components/FAB";
 import Navbar from "./components/Navbar";
 import PostsList from "./features/posts/PostsList";
 import AddPostForm from "./features/posts/AddPostForm";
+import SinglePostPage from "./features/posts/SinglePostPage";
+
 import "./App.css";
 
 const App = () => {
@@ -22,9 +24,10 @@ const App = () => {
 							</div>
 						</>
 					}
-				/>
+				></Route>
 
 				<Route path="add" element={<AddPostForm />} />
+				<Route path="/posts/:postId" element={<SinglePostPage />} />
 			</Routes>
 		</main>
 	);

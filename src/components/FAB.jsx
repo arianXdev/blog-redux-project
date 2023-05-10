@@ -14,6 +14,7 @@ const FAB = () => {
 	const getIcon = () => {
 		if (pathname === "/") return <ion-icon name="pencil-outline"></ion-icon>;
 		else if (pathname === "/add") return <ion-icon name="return-down-back-outline"></ion-icon>;
+		else if (pathname.startsWith("/posts")) return <ion-icon name="return-down-back-outline"></ion-icon>;
 		else return <ion-icon name="alert-outline"></ion-icon>;
 	};
 

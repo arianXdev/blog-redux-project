@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./PostsList.css";
 
 /*
@@ -13,6 +14,7 @@ const PostsList = () => {
 		<article className="post-item" key={post.id}>
 			<h3 className="post-item__title">{post.title}</h3>
 			<p className="post-item__content">{post.content.substring(0, 100)}</p>
+			<Link to={`/posts/${post.id}`}>View Post</Link>
 		</article>
 	));
 

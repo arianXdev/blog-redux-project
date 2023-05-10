@@ -10,8 +10,8 @@ const SinglePostPage = () => {
 
 	if (!post) {
 		return (
-			<section>
-				<h2>Post not found!</h2>
+			<section className="container">
+				<h2 className="empty-warning">Post not found!</h2>
 			</section>
 		);
 	}

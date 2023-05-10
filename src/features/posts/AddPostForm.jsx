@@ -53,7 +53,7 @@ const AddPostForm = () => {
 						<label className="add__label" htmlFor="postContent">
 							Content:
 						</label>
-						<textarea id="postContent" className="add__content" name="postContent" value={content} onChange={onContentChanged} />
+						<textarea id="postContent" className="add__content" name="postContent" value={content} onChange={onContentChanged} placeholder="What's in your mind?" />
 					</div>
 
 					<button onClick={onSavePostClicked} type="button" className="add__btn" disabled={!canSave}>

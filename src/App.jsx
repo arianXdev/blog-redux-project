@@ -14,7 +14,9 @@ const App = () => {
 					path="/"
 					element={
 						<>
-							<PostsList />
+							<div className="container">
+								<PostsList />
+							</div>
 						</>
 					}
 				/>

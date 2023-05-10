@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import "./Breadcrumb.css";
-import { useEffect } from "react";
 
 const Breadcrumb = () => {
 	const { pathname } = useLocation();

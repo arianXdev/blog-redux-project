@@ -14,7 +14,10 @@ React components can read data from the Redux store using the useSelector hook f
 const PostsList = () => {
 	const posts = useSelector((state) => state.posts);
 
-	const renderedPosts = posts.map((post) => (
+	// posts.slice() to make a shallow copy of the posts (not mutating the original state!)
+	const sortedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date));
+
+	const renderedPosts = sortedPosts.map((post) => (
 		<article className="post-item" key={post.id}>
 			<h3 className="post-item__title">
 				<Link to={`/posts/${post.id}`}>{post.title}</Link>

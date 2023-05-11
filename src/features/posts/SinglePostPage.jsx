@@ -1,6 +1,8 @@
-import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Breadcrumb } from "../../components";
+
+import { postDeleted } from "./postsSlice";
 
 import PostAuthor from "./PostAuthor";
 import { TimeAgo } from "./TimeAgo";
@@ -10,7 +12,15 @@ import "./SinglePostPage.css";
 const SinglePostPage = () => {
 	const { postId } = useParams();
 
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
 	const post = useSelector((state) => state.posts.find((post) => post.id === postId));
+
+	const onPostDeleted = () => {
+		dispatch(postDeleted(post.id));
+		navigate("/");
+	};
 
 	if (!post) {
 		return (
@@ -35,7 +45,7 @@ const SinglePostPage = () => {
 				<ion-icon name="create-outline"></ion-icon>
 			</Link>
 
-			<button type="button" className="delete-btn">
+			<button onClick={onPostDeleted} type="button" className="delete-btn">
 				<ion-icon name="trash-outline"></ion-icon>
 			</button>
 		</section>

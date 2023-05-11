@@ -1,0 +1,21 @@
+.reactions {
+	margin-top: 0.9em;
+}
+
+.reactions__btn {
+	font-family: var(--oxanium-font) !important;
+	color: white;
+	background: transparent;
+	padding: 0 0.7em;
+	transition: scale 0.1s ease-in-out;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.reactions__btn:first-of-type {
+	padding-left: 0;
+}
+
+.reactions__btn:hover {
+	scale: 1.1;
+}

@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Breadcrumb } from "../../components";
 
 import "./SinglePostPage.css";
@@ -24,6 +24,10 @@ const SinglePostPage = () => {
 				<h2 className="post__title">{post.title}</h2>
 				<p className="post__content">{post.content}</p>
 			</article>
+
+			<Link to={`/editPost/${postId}`} className="edit-btn">
+				<ion-icon name="create-outline"></ion-icon>
+			</Link>
 		</section>
 	);
 };

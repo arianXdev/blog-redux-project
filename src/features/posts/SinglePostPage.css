@@ -18,3 +18,27 @@
 	font-size: 1.3em;
 	line-height: 1.8;
 }
+
+.edit-btn {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 30px;
+	right: 50px;
+	bottom: 90px;
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	background-color: rgb(5, 5, 5);
+	box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+	cursor: pointer;
+	color: #fff;
+	transition: all 0.5s ease-in-out;
+}
+
+.edit-btn:hover {
+	box-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
+	background-color: rgb(1, 1, 1);
+	scale: 1.009;
+}

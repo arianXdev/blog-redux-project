@@ -14,12 +14,12 @@ const FAB = () => {
 	const getIcon = () => {
 		if (pathname === "/") return <ion-icon name="pencil-outline"></ion-icon>;
 		else if (pathname === "/add") return <ion-icon name="return-down-back-outline"></ion-icon>;
-		else if (pathname.startsWith("/posts")) return <ion-icon name="return-down-back-outline"></ion-icon>;
+		else if (pathname.startsWith("/posts") || pathname.startsWith("/editPost")) return <ion-icon name="return-down-back-outline"></ion-icon>;
 		else return <ion-icon name="alert-outline"></ion-icon>;
 	};
 
 	return (
-		<Link to={path} className="FAB">
+		<Link to={path} className={pathname.startsWith("/posts") ? "FAB edit-btn-activated" : "FAB"}>
 			{getIcon()}
 		</Link>
 	);

@@ -1,0 +1,72 @@
+.edit {
+	margin: 1em 0;
+}
+
+.edit__title {
+	font-family: var(--mono-font);
+}
+
+.edit__form {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.edit__group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 2em;
+}
+
+.edit__label {
+	font-family: var(--mono-font);
+	font-weight: 700;
+	margin-bottom: 0.7em;
+}
+
+.edit__input {
+	width: 100%;
+	font-family: var(--mono-font) !important;
+	font-size: 1.2em;
+	padding: 0.6em 0.8em;
+	background: #555;
+	color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.edit__content {
+	width: 100%;
+	height: 200px;
+	font-family: var(--mono-font) !important;
+	font-size: 1.2em;
+	padding: 0.6em 0.8em;
+	background: #555;
+	color: white;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+	resize: vertical;
+}
+
+.edit__btn {
+	margin-top: 2em;
+	padding: 0.7em 2em;
+	font-size: 1.2em;
+	font-weight: 900;
+	background: #181818;
+	border-radius: 18px;
+	color: white;
+	box-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+	transition: all 0.2s ease-in-out;
+}
+
+.edit__btn:not(:disabled):hover {
+	background: #131313;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.edit__btn:disabled {
+	opacity: 0.8;
+	text-decoration: underline;
+}

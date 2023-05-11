@@ -27,10 +27,11 @@
 }
 
 .post-item__title {
-	margin-bottom: 0.5em;
+	margin-bottom: 0.1em;
 }
 
 .post-item__content {
+	padding-top: 0.9em;
 	font-size: 0.95em;
 	line-height: 1.5;
 }

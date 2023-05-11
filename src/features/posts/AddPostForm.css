@@ -15,6 +15,7 @@
 }
 
 .add__group {
+	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -69,4 +70,28 @@
 .add__btn:disabled {
 	opacity: 0.8;
 	text-decoration: underline;
+}
+
+.add__select {
+	font-family: var(--oxanium-font) !important;
+	position: relative;
+	padding: 0.5em 1em !important;
+	background: #131313;
+	color: white;
+	-moz-appearance: none; /* Firefox */
+	-webkit-appearance: none; /* Safari and Chrome */
+	appearance: none;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.add__select ~ ion-icon {
+	position: absolute;
+	top: 40px;
+	right: 15px;
+	font-size: 1em !important;
+	transition: all 0.5s ease-in-out;
+}
+
+.add__select:active ~ ion-icon {
+	transform: rotate(180deg);
 }

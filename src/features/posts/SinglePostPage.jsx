@@ -5,6 +5,7 @@ import { Breadcrumb } from "../../components";
 import { postDeleted } from "./postsSlice";
 
 import PostAuthor from "./PostAuthor";
+import ReactionButtons from "./ReactionButtons";
 import { TimeAgo } from "./TimeAgo";
 
 import { toast } from "react-hot-toast";
@@ -91,6 +92,10 @@ const SinglePostPage = () => {
 			<button onClick={onPostDeleted} type="button" className="delete-btn">
 				<ion-icon name="trash-outline"></ion-icon>
 			</button>
+
+			<section className="post__reactions">
+				<ReactionButtons post={post} />
+			</section>
 		</section>
 	);
 };

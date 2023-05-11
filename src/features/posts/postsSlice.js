@@ -2,7 +2,7 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { sub } from "date-fns";
 
 const initialState = [
-	{ id: "1", title: "Blog post 1", date: sub(new Date(), { minutes: 10 }).toISOString(), content: "Hello!" },
+	{ id: "1", title: "Blog post 1", date: sub(new Date(), { minutes: 10 }).toISOString(), content: "Hello!", reactions: { thumbsUp: 0, hooray: 0, heart: 0, rocket: 0, eyes: 0 } },
 	{
 		id: "2",
 		title: "Blog post 2",
@@ -36,6 +36,7 @@ const initialState = [
 				rerum pariatur suscipit ab dignissimos vel ullam ipsum vero provident sint praesentium esse, quae nemo aspernatur hic numquam nostrum. Eius cumque reprehenderit
 				voluptatum dolore vero quaerat delectus, excepturi voluptates corrupti qui enim eligendi vitae, consequuntur porro omnis sint placeat ipsa est odit! Quis nulla rem
 				ea fuga laborum, consectetur nesciunt dicta perferendis incidunt?`,
+		reactions: { thumbsUp: 0, hooray: 0, heart: 0, rocket: 0, eyes: 0 },
 	},
 ];
 
@@ -57,6 +58,7 @@ const postsSlice = createSlice({
 						content,
 						date: new Date().toISOString(),
 						user: userId,
+						reactions: { thumbsUp: 0, hooray: 0, heart: 0, rocket: 0, eyes: 0 },
 					},
 				};
 			},
@@ -80,11 +82,19 @@ const postsSlice = createSlice({
 				}
 			});
 		},
+
+		reactionAdded(state, action) {
+			const { postId, reaction } = action.payload;
+			const existingPost = state.find((post) => post.id === postId);
+			if (existingPost) {
+				existingPost.reactions[reaction]++;
+			}
+		},
 	},
 });
 
 // When we write the postAdded reducer function, createSlice will automatically generate an action creator func with the same name.
 // We can export that action creator and use it in our UI components to dispatch the action when the user clicks "Save Post".
-export const { postAdded, postUpdated, postDeleted } = postsSlice.actions;
+export const { postAdded, postUpdated, postDeleted, reactionAdded } = postsSlice.actions;
 
 export default postsSlice.reducer;

@@ -34,6 +34,10 @@ const SinglePostPage = () => {
 			<Link to={`/editPost/${postId}`} className="edit-btn">
 				<ion-icon name="create-outline"></ion-icon>
 			</Link>
+
+			<button type="button" className="delete-btn">
+				<ion-icon name="trash-outline"></ion-icon>
+			</button>
 		</section>
 	);
 };

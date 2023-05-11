@@ -17,6 +17,7 @@
 :root {
 	/* Colors */
 	--background-color: #222;
+	--red-color: #eb0014;
 
 	/* Fonts */
 	--main-font: Ubuntu, "Ubuntu Mono", sans-serif !important;

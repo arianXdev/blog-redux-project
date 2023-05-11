@@ -2,6 +2,8 @@ import { useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { Breadcrumb } from "../../components";
 
+import PostAuthor from "./PostAuthor";
+
 import "./SinglePostPage.css";
 
 const SinglePostPage = () => {
@@ -22,6 +24,7 @@ const SinglePostPage = () => {
 			<Breadcrumb />
 			<article className="post">
 				<h2 className="post__title">{post.title}</h2>
+				<PostAuthor userId={post.user} />
 				<p className="post__content">{post.content}</p>
 			</article>
 

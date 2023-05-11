@@ -7,6 +7,8 @@ import { postDeleted } from "./postsSlice";
 import PostAuthor from "./PostAuthor";
 import { TimeAgo } from "./TimeAgo";
 
+import { toast } from "react-hot-toast";
+
 import "./SinglePostPage.css";
 
 const SinglePostPage = () => {
@@ -18,8 +20,49 @@ const SinglePostPage = () => {
 	const post = useSelector((state) => state.posts.find((post) => post.id === postId));
 
 	const onPostDeleted = () => {
-		dispatch(postDeleted(post.id));
-		navigate("/");
+		toast(
+			(t) => (
+				<>
+					<p>
+						Are you sure that you want to <b style={{ color: "var(--red-color)" }}> delete </b> this post?
+					</p>
+					<div className="button-group">
+						<button
+							className="toast-btn toast-btn--confirm"
+							onClick={() => {
+								dispatch(postDeleted(post.id));
+								navigate("/");
+								toast.dismiss(t.id);
+							}}
+						>
+							Yes! Sure.
+						</button>
+						<button className="toast-btn toast-btn--dismiss" onClick={() => toast.dismiss(t.id)}>
+							Dismiss
+						</button>
+					</div>
+				</>
+			),
+			{
+				icon: "⚠️",
+				style: {
+					display: "flex",
+					justifyContent: "flex-start",
+					alignItems: "center",
+					minWidth: "max-content",
+					borderRadius: "10px",
+					background: "#222",
+					color: "#fff",
+					lineHeight: "1.7",
+					fontFamily: "var(--oxanium-font)",
+					fontWeight: "700",
+					fontSize: ".95em",
+				},
+			}
+		);
+
+		// dispatch(postDeleted(post.id));
+		// navigate("/");
 	};
 
 	if (!post) {

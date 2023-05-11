@@ -2,3 +2,35 @@
 	color: white;
 	font-size: 16px;
 }
+
+.toast-btn {
+	padding: 0.4em 0.9em;
+	margin-right: 0.5em;
+	border-radius: 20px;
+	color: #fff;
+	font-size: 15px;
+	transition: all 0.2s ease-in-out;
+}
+
+.toast-btn--confirm {
+	background: transparent;
+	opacity: 0.9;
+}
+
+.toast-btn--confirm:hover {
+	background-color: #333;
+}
+
+.toast-btn--dismiss {
+	font-weight: 500;
+	background-color: var(--red-color);
+	box-shadow: 0 0 5px red;
+}
+
+.toast-btn--dismiss:hover {
+	box-shadow: 0 0 10px red;
+}
+
+.button-group {
+	margin-left: 20px;
+}

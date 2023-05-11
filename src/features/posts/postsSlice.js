@@ -1,10 +1,11 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = [
-	{ id: "1", title: "First Post!", content: "Hello!" },
+	{ id: "1", title: "First Post!", date: new Date().toISOString(), content: "Hello!" },
 	{
 		id: "2",
 		title: "Second Post",
+		date: new Date().toISOString(),
 		content: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui sequi molestiae autem numquam odio facere accusamus vel! Veritatis ipsam iste neque libero, nemo
 				magnam beatae illo expedita enim nostrum ea animi ut eaque a qui recusandae vitae optio quibusdam aspernatur accusamus totam deleniti praesentium. Aspernatur
 				repellendus earum debitis error? Itaque nobis libero soluta impedit, ipsam, aliquam recusandae delectus quam similique sit fugiat architecto provident error! Nemo
@@ -53,6 +54,7 @@ const postsSlice = createSlice({
 						id: nanoid(),
 						title,
 						content,
+						date: new Date().toISOString(),
 						user: userId,
 					},
 				};

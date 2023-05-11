@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Breadcrumb } from "../../components";
 
 import PostAuthor from "./PostAuthor";
+import { TimeAgo } from "./TimeAgo";
 
 import "./SinglePostPage.css";
 
@@ -24,7 +25,9 @@ const SinglePostPage = () => {
 			<Breadcrumb />
 			<article className="post">
 				<h2 className="post__title">{post.title}</h2>
-				<PostAuthor userId={post.user} />
+				<div className="post__details">
+					<PostAuthor userId={post.user} /> | <TimeAgo timestamp={post.date} />
+				</div>
 				<p className="post__content">{post.content}</p>
 			</article>
 

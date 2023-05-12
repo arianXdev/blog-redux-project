@@ -26,7 +26,7 @@ const PostsList = () => {
 			<div className="post-item__details">
 				<PostAuthor userId={post.user} /> | <TimeAgo timestamp={post.date} />
 			</div>
-			<p className="post-item__content">{post.content.substring(0, 100)}</p>
+			<p className="post-item__content">{post.content.substring(0, 135)}</p>
 			<Link to={`/posts/${post.id}`} className="post-item__view-btn">
 				<ion-icon name="expand-outline"></ion-icon>
 			</Link>

@@ -1,5 +1,6 @@
 .reactions {
 	margin-top: 0.9em;
+	transition: all 0.3s ease;
 }
 
 .reactions__btn {
@@ -7,7 +8,7 @@
 	color: white;
 	background: transparent;
 	padding: 0 0.7em;
-	transition: scale 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out;
 	user-select: none;
 	-webkit-user-select: none;
 }

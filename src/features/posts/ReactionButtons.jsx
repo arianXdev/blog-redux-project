@@ -1,8 +1,7 @@
-import "./ReactionButtons.css";
-
 import { useDispatch } from "react-redux";
-
 import { reactionAdded } from "./postsSlice";
+
+import "./ReactionButtons.css";
 
 const ReactionButtons = ({ post }) => {
 	const dispatch = useDispatch();

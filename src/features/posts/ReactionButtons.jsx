@@ -1,10 +1,17 @@
 import { useDispatch } from "react-redux";
 import { reactionAdded } from "./postsSlice";
 
+import numeral from "numeral";
+
 import "./ReactionButtons.css";
 
 const ReactionButtons = ({ post }) => {
 	const dispatch = useDispatch();
+
+	const formatNumber = (number) => {
+		const formattedNumber = numeral(number).format("0a");
+		return formattedNumber;
+	};
 
 	const reactionEmoji = {
 		thumbsUp: "👍",
@@ -17,7 +24,7 @@ const ReactionButtons = ({ post }) => {
 	const reactionButtons = Object.entries(reactionEmoji).map(([name, emoji]) => {
 		return (
 			<button key={name} type="button" className="reactions__btn" onClick={() => dispatch(reactionAdded({ postId: post.id, reaction: name }))}>
-				{emoji} {post.reactions[name] === 0 ? null : post.reactions[name]}
+				{emoji} {formatNumber(post.reactions[name] === 0 ? 0 : post.reactions[name])}
 			</button>
 		);
 	});

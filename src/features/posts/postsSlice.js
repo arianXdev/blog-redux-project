@@ -2,7 +2,13 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { sub } from "date-fns";
 
 const initialState = [
-	{ id: "1", title: "Blog post 1", date: sub(new Date(), { minutes: 10 }).toISOString(), content: "Hello!", reactions: { thumbsUp: 0, hooray: 2, heart: 0, rocket: 1, eyes: 0 } },
+	{
+		id: "1",
+		title: "Blog post 1",
+		date: sub(new Date(), { minutes: 10 }).toISOString(),
+		content: "Hello!",
+		reactions: { thumbsUp: 2489, hooray: 2, heart: 78, rocket: 1, eyes: 0 },
+	},
 	{
 		id: "2",
 		title: "Blog post 2",
@@ -36,7 +42,7 @@ const initialState = [
 				rerum pariatur suscipit ab dignissimos vel ullam ipsum vero provident sint praesentium esse, quae nemo aspernatur hic numquam nostrum. Eius cumque reprehenderit
 				voluptatum dolore vero quaerat delectus, excepturi voluptates corrupti qui enim eligendi vitae, consequuntur porro omnis sint placeat ipsa est odit! Quis nulla rem
 				ea fuga laborum, consectetur nesciunt dicta perferendis incidunt?`,
-		reactions: { thumbsUp: 1, hooray: 0, heart: 0, rocket: 0, eyes: 2 },
+		reactions: { thumbsUp: 20, hooray: 0, heart: 1880, rocket: 0, eyes: 2 },
 	},
 ];
 

@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Breadcrumb } from "../../components";
 
-import { postDeleted } from "./postsSlice";
+import { postDeleted, selectPostById } from "./postsSlice";
 
 import PostAuthor from "./PostAuthor";
 import ReactionButtons from "./ReactionButtons";
@@ -18,7 +18,7 @@ const SinglePostPage = () => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
-	const post = useSelector((state) => state.posts.find((post) => post.id === postId));
+	const post = useSelector((state) => selectPostById(state, postId));
 
 	const onPostDeleted = () => {
 		toast(

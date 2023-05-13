@@ -1,6 +1,8 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
+import { selectAllPosts } from "./postsSlice";
+
 import PostAuthor from "./PostAuthor";
 import ReactionButtons from "./ReactionButtons";
 import { TimeAgo } from "./TimeAgo";
@@ -13,7 +15,7 @@ React components can read data from the Redux store using the useSelector hook f
 */
 
 const PostsList = () => {
-	const posts = useSelector((state) => state.posts);
+	const posts = useSelector(selectAllPosts);
 
 	// posts.slice() to make a shallow copy of the posts (not mutating the original state!)
 	const sortedPosts = posts.slice().sort((a, b) => b.date.localeCompare(a.date));

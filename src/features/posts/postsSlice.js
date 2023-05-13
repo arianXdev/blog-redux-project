@@ -104,3 +104,10 @@ const postsSlice = createSlice({
 export const { postAdded, postUpdated, postDeleted, reactionAdded } = postsSlice.actions;
 
 export default postsSlice.reducer;
+
+// Note: that the 'state' parameter for these selector functions is "the root Redux state object",
+//  as it was for the inlined anonymous selectors we wrote directly inside of useSelector.
+
+// selector functions
+export const selectAllPosts = (state) => state.posts;
+export const selectPostById = (state, postId) => state.posts.find((post) => post.id === postId);
